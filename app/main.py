@@ -1,14 +1,17 @@
 from fastapi import FastAPI
-from .routers import users
+from .api.api_v1.api import api_router
 from .db.database import engine, Base
-from fastapi.responses import JSONResponse
 
 Base.metadata.create_all(bind=engine)
 
-app = FastAPI(title="FastAPI test")
+app = FastAPI(
+    title="FastAPI test",
+    description="Test/template API made by FastAPI",
+    version="0.0.1"
+)
 
-app.include_router(users.router)
+app.include_router(api_router, prefix="/v1")
 
 @app.get('/')
 async def root():
-    return { "message": "Helléào world from FastAPI" }
+    return { "message": "Hello world from FastAPI" }

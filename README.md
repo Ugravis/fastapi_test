@@ -5,14 +5,26 @@ Activate the new virtual environment so that any Python command you run or packa
 fastapi_test
 └─ app
    ├─ __init__.py
+   ├─ api
+   │  ├─ __init__.py
+   │  └─ api_v1
+   │     ├─ __init__.py
+   │     ├─ api.py
+   │     └─ routes
+   │        ├─ __init__.py
+   │        └─ users.py
    ├─ db
    │  ├─ __init__.py
    │  ├─ database.py
    │  └─ models
-   │     ├─ __init__.py
-   │     └─ user.py
+   │     ├─ User.py
+   │     └─ __init__.py
    ├─ main.py
-   └─ routers
+   ├─ schemas
+   │  ├─ __init__.py
+   │  └─ user.py
+   └─ services
       ├─ __init__.py
-      └─ users.py
+      └─ user_service.py
+
 ```
